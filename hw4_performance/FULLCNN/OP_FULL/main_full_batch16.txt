@@ -1,0 +1,25 @@
+/home/srs9969/.local/lib/python3.6/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: /home/srs9969/.local/lib/python3.6/site-packages/torchvision/image.so: undefined symbol: _ZNK3c106IValue23reportToTensorTypeErrorEv
+  warn(f"Failed to load image Python extension: {e}")
+/home/srs9969/.local/lib/python3.6/site-packages/torch/cuda/memory.py:375: FutureWarning: torch.cuda.memory_cached has been renamed to torch.cuda.memory_reserved
+  FutureWarning)
+Train Epoch: 1 [0/1024 (0%)]	Loss: 2.316154
+Train Epoch: 1 [160/1024 (16%)]	Loss: 2.038399
+Train Epoch: 1 [320/1024 (31%)]	Loss: 1.225320
+Train Epoch: 1 [480/1024 (47%)]	Loss: 0.856479
+Train Epoch: 1 [640/1024 (62%)]	Loss: 0.874471
+Train Epoch: 1 [800/1024 (78%)]	Loss: 1.212205
+Train Epoch: 1 [960/1024 (94%)]	Loss: 0.458051
+Tesla V100-SXM2-16GB
+Memory Usage:
+Allocated:  0.017885208129882812 GB
+Cached:    0.041015625 GB
+Module       | Self CPU total | CPU total | Self CUDA total | CUDA total | Self CPU Mem | CPU Mem | Self CUDA Mem | CUDA Mem  | Number of Calls
+-------------|----------------|-----------|-----------------|------------|--------------|---------|---------------|-----------|----------------
+Net          |                |           |                 |            |              |         |               |           |                
+├── conv1    | 16.153ms       | 59.712ms  | 16.097ms        | 58.907ms   | 0 b          | 0 b     | 84.50 Mb      | 338.00 Mb | 64             
+├── conv2    | 14.039ms       | 52.569ms  | 14.018ms        | 51.377ms   | 0 b          | 0 b     | 144.00 Mb     | 588.53 Mb | 64             
+├── dropout1 | 5.784ms        | 13.976ms  | 5.747ms         | 10.698ms   | 0 b          | 0 b     | 45.00 Mb      | 180.00 Mb | 64             
+├── dropout2 | 5.697ms        | 13.526ms  | 5.683ms         | 10.536ms   | 0 b          | 0 b     | 640.00 Kb     | 2.50 Mb   | 64             
+├── fc1      | 11.013ms       | 22.966ms  | 11.280ms        | 20.273ms   | 0 b          | 0 b     | 512.00 Kb     | 1.50 Mb   | 64             
+└── fc2      | 8.059ms        | 17.189ms  | 8.066ms         | 14.001ms   | 0 b          | 0 b     | 64.00 Kb      | 192.00 Kb | 64             
+

@@ -1,0 +1,19 @@
+/home/srs9969/.local/lib/python3.6/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: /home/srs9969/.local/lib/python3.6/site-packages/torchvision/image.so: undefined symbol: _ZNK3c106IValue23reportToTensorTypeErrorEv
+  warn(f"Failed to load image Python extension: {e}")
+/home/srs9969/.local/lib/python3.6/site-packages/torch/cuda/memory.py:375: FutureWarning: torch.cuda.memory_cached has been renamed to torch.cuda.memory_reserved
+  FutureWarning)
+Train Epoch: 1 [0/1024 (0%)]	Loss: 2.318212
+Tesla V100-SXM2-16GB
+Memory Usage:
+Allocated:  0.017885208129882812 GB
+Cached:    0.44140625 GB
+Module       | Self CPU total | CPU total | Self CUDA total | CUDA total | Self CPU Mem | CPU Mem | Self CUDA Mem | CUDA Mem  | Number of Calls
+-------------|----------------|-----------|-----------------|------------|--------------|---------|---------------|-----------|----------------
+Net          |                |           |                 |            |              |         |               |           |                
+├── conv1    | 4.391ms        | 17.150ms  | 4.732ms         | 18.477ms   | 0 b          | 0 b     | 88.00 Mb      | 352.00 Mb | 4              
+├── conv2    | 1.062ms        | 4.047ms   | 3.008ms         | 11.782ms   | 0 b          | 0 b     | 144.00 Mb     | 576.01 Mb | 4              
+├── dropout1 | 568.244us      | 1.657ms   | 641.280us       | 1.234ms    | 0 b          | 0 b     | 45.00 Mb      | 180.00 Mb | 4              
+├── dropout2 | 371.705us      | 938.868us | 369.472us       | 693.504us  | 0 b          | 0 b     | 640.00 Kb     | 2.50 Mb   | 4              
+├── fc1      | 1.613ms        | 3.272ms   | 1.855ms         | 3.510ms    | 0 b          | 0 b     | 512.00 Kb     | 1.50 Mb   | 4              
+└── fc2      | 576.732us      | 1.214ms   | 583.104us       | 1.015ms    | 0 b          | 0 b     | 40.00 Kb      | 120.00 Kb | 4              
+

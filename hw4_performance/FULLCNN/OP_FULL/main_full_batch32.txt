@@ -1,0 +1,22 @@
+/home/srs9969/.local/lib/python3.6/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: /home/srs9969/.local/lib/python3.6/site-packages/torchvision/image.so: undefined symbol: _ZNK3c106IValue23reportToTensorTypeErrorEv
+  warn(f"Failed to load image Python extension: {e}")
+/home/srs9969/.local/lib/python3.6/site-packages/torch/cuda/memory.py:375: FutureWarning: torch.cuda.memory_cached has been renamed to torch.cuda.memory_reserved
+  FutureWarning)
+Train Epoch: 1 [0/1024 (0%)]	Loss: 2.307858
+Train Epoch: 1 [320/1024 (31%)]	Loss: 1.388964
+Train Epoch: 1 [640/1024 (62%)]	Loss: 0.949639
+Train Epoch: 1 [960/1024 (94%)]	Loss: 1.063705
+Tesla V100-SXM2-16GB
+Memory Usage:
+Allocated:  0.017885208129882812 GB
+Cached:    0.0703125 GB
+Module       | Self CPU total | CPU total | Self CUDA total | CUDA total | Self CPU Mem | CPU Mem | Self CUDA Mem | CUDA Mem  | Number of Calls
+-------------|----------------|-----------|-----------------|------------|--------------|---------|---------------|-----------|----------------
+Net          |                |           |                 |            |              |         |               |           |                
+├── conv1    | 9.890ms        | 37.299ms  | 9.937ms         | 37.188ms   | 0 b          | 0 b     | 99.52 Mb      | 398.06 Mb | 32             
+├── conv2    | 7.226ms        | 27.023ms  | 7.348ms         | 27.205ms   | 0 b          | 0 b     | 144.00 Mb     | 582.27 Mb | 32             
+├── dropout1 | 2.950ms        | 7.017ms   | 2.949ms         | 5.463ms    | 0 b          | 0 b     | 45.00 Mb      | 180.00 Mb | 32             
+├── dropout2 | 2.848ms        | 6.916ms   | 2.834ms         | 5.297ms    | 0 b          | 0 b     | 640.00 Kb     | 2.50 Mb   | 32             
+├── fc1      | 5.883ms        | 12.236ms  | 6.037ms         | 10.990ms   | 0 b          | 0 b     | 512.00 Kb     | 1.50 Mb   | 32             
+└── fc2      | 4.361ms        | 9.279ms   | 4.352ms         | 7.571ms    | 0 b          | 0 b     | 48.00 Kb      | 144.00 Kb | 32             
+
