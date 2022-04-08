@@ -1,0 +1,3 @@
+<function resnet18 at 0x14a5a6b731e0> tensor([59509888.])
+<function resnet34 at 0x14a5a6b73268> tensor([1.0995e+08])
+<function resnet50 at 0x14a5a6b732f0> tensor([1.7728e+08])
