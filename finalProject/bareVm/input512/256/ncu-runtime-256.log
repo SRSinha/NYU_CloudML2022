@@ -1,0 +1,159 @@
+==PROF== Target process 26569 terminated before first instrumented API call.
+==PROF== Target process 26570 terminated before first instrumented API call.
+==PROF== Connected to process 26567 (/opt/conda/bin/python3.7)
+==PROF== Profiling "implicit_convolve_sgemm" - 1: 0%....50%....100% - 3 passes
+==PROF== Profiling "elementwise_kernel" - 2: 0%....50%....100% - 3 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 3: 0%....50%....100% - 3 passes
+==PROF== Profiling "computeOffsetsKernel" - 4: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_scudnn_128x64_relu_inte..." - 5: 0%....50%....100% - 3 passes
+==PROF== Profiling "elementwise_kernel" - 6: 0%....50%....100% - 3 passes
+==PROF== Profiling "computeOffsetsKernel" - 7: 0%....50%....100% - 3 passes
+==PROF== Profiling "volta_scudnn_128x64_relu_inte..." - 8: 0%....50%....100% - 3 passes
+==PROF== Profiling "elementwise_kernel" - 9: 0%....50%....100% - 3 passes
+==PROF== Target process 26594 terminated before first instrumented API call.
+==PROF== Disconnected from process 26567
+[26567] python3.7@127.0.0.1
+  void cudnn::detail::implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, true, false, true>(int, int, int, float const*, int, float*, float*, kernel_conv_params, int, float, float, int, float*, float*, int, int), 2022-May-03 03:26:24, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          14.45
+    dram__bytes_write.sum                                                            Mbyte                          37.73
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                       88604672
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        5537792
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}), 2022-May-03 03:26:24, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          22.16
+    dram__bytes_write.sum                                                            Mbyte                          19.01
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        5537792
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2> >(int, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#8}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>), 2022-May-03 03:26:25, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          22.15
+    dram__bytes_write.sum                                                            Mbyte                          19.01
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  cudnn::gemm::computeOffsetsKernel(cudnn::gemm::ComputeOffsetsParams), 2022-May-03 03:26:25, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Kbyte                           2.66
+    dram__bytes_write.sum                                                             byte                              0
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_scudnn_128x64_relu_interior_nn_v1, 2022-May-03 03:26:26, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          22.82
+    dram__bytes_write.sum                                                            Mbyte                          34.61
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     2717908992
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}), 2022-May-03 03:26:26, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          37.75
+    dram__bytes_write.sum                                                            Mbyte                          34.60
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  cudnn::gemm::computeOffsetsKernel(cudnn::gemm::ComputeOffsetsParams), 2022-May-03 03:26:26, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Kbyte                           2.66
+    dram__bytes_write.sum                                                             byte                              0
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  volta_scudnn_128x64_relu_interior_nn_v1, 2022-May-03 03:26:27, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          22.80
+    dram__bytes_write.sum                                                            Mbyte                          34.61
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                     2717908992
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::AddFunctor<float> > const&)::{lambda(int)#1}), 2022-May-03 03:26:27, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__bytes_read.sum                                                             Mbyte                          37.75
+    dram__bytes_write.sum                                                            Mbyte                          34.60
+    smsp__sass_thread_inst_executed_op_dadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_dmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_fadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_ffma_pred_on.sum                               inst                        9437184
+    smsp__sass_thread_inst_executed_op_fmul_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hadd_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hfma_pred_on.sum                               inst                              0
+    smsp__sass_thread_inst_executed_op_hmul_pred_on.sum                               inst                              0
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

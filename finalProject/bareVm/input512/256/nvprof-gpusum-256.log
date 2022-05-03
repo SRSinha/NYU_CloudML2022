@@ -1,0 +1,11 @@
+==26707== NVPROF is profiling process 26707, command: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 256
+==26707== Profiling application: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 256
+==26707== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   40.02%  908.48us        11  82.588us  1.6960us  811.93us  [CUDA memcpy HtoD]
+                   39.92%  906.14us         2  453.07us  452.93us  453.22us  volta_scudnn_128x64_relu_interior_nn_v1
+                   11.31%  256.83us         3  85.610us  61.504us  97.728us  _ZN2at6native18elementwise_kernelILi128ELi2EZNS0_15gpu_kernel_implINS0_13BinaryFunctorIfffNS0_10AddFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_
+                    5.06%  114.75us         1  114.75us  114.75us  114.75us  void cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+                    2.62%  59.487us         1  59.487us  59.487us  59.487us  _ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_84_GLOBAL__N__60_tmpxft_000071c0_00000000_12_TensorCompare_compute_70_cpp1_ii_d0af11f719launch_clamp_scalarERNS_18TensorIteratorBaseEN3c106ScalarES6_NS0_6detail11ClampLimitsEENKUlvE_clEvENKUlvE6_clEvEUlfE_NS_6detail5ArrayIPcLi2EEEEEviT0_T1_
+                    0.67%  15.232us         4  3.8080us  3.6800us  4.1280us  [CUDA memset]
+                    0.40%  8.9920us         2  4.4960us  4.4160us  4.5760us  cudnn::gemm::computeOffsetsKernel(cudnn::gemm::ComputeOffsetsParams)

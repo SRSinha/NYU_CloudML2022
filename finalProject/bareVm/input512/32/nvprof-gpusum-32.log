@@ -1,0 +1,11 @@
+==26005== NVPROF is profiling process 26005, command: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 32
+==26005== Profiling application: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 32
+==26005== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   41.23%  894.62us        16  55.913us  54.880us  58.432us  volta_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1
+                   41.00%  889.53us        11  80.866us  1.6640us  849.44us  [CUDA memcpy HtoD]
+                   10.41%  225.95us        17  13.291us  10.624us  13.952us  _ZN2at6native18elementwise_kernelILi128ELi2EZNS0_15gpu_kernel_implINS0_13BinaryFunctorIfffNS0_10AddFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_
+                    4.92%  106.78us        16  6.6740us  5.8880us  7.1680us  void cudnn::winograd::generateWinogradTilesKernel<int=0, float, float>(cudnn::winograd::GenerateWinogradTilesParams<float, float>)
+                    1.39%  30.176us         1  30.176us  30.176us  30.176us  void cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+                    0.71%  15.488us         4  3.8720us  3.6800us  4.0960us  [CUDA memset]
+                    0.33%  7.1360us         1  7.1360us  7.1360us  7.1360us  _ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_84_GLOBAL__N__60_tmpxft_000071c0_00000000_12_TensorCompare_compute_70_cpp1_ii_d0af11f719launch_clamp_scalarERNS_18TensorIteratorBaseEN3c106ScalarES6_NS0_6detail11ClampLimitsEENKUlvE_clEvENKUlvE6_clEvEUlfE_NS_6detail5ArrayIPcLi2EEEEEviT0_T1_

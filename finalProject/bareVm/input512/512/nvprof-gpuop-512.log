@@ -1,0 +1,8 @@
+DTOH
+
+
+HTOD
+activities: 38.50% 960.80us 11 87.345us 1.6640us 799.42us
+
+Cuda memset
+15.520us 4 3.8800us 3.7120us 4.2880us [CUDA memset]
