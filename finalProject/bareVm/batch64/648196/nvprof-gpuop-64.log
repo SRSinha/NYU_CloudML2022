@@ -1,0 +1,8 @@
+DTOH
+
+
+HTOD
+848.80us 11 77.163us 1.6640us 801.66us [CUDA memcpy
+
+Cuda memset
+15.456us 4 3.8640us 3.6800us 4.1280us [CUDA memset]

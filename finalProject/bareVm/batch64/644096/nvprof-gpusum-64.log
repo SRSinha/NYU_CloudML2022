@@ -1,0 +1,13 @@
+==3164== NVPROF is profiling process 3164, command: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 64
+==3164== Profiling application: /opt/conda/bin/python3 main.py --epochs 1 --batch-size 64
+==3164== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   33.31%  3.9042ms        64  61.003us  59.392us  62.240us  volta_sgemm_128x64_nn
+                   25.06%  2.9369ms        64  45.889us  44.704us  47.680us  void cudnn::winograd_nonfused::winogradForwardOutput4x4<float, float>(cudnn::winograd_nonfused::WinogradOutputParams<float, float>)
+                   14.90%  1.7462ms        64  27.283us  26.080us  28.352us  void cudnn::winograd_nonfused::winogradForwardData4x4<float, float>(cudnn::winograd_nonfused::WinogradDataParams<float, float>)
+                   14.40%  1.6881ms        65  25.971us  14.976us  26.688us  _ZN2at6native18elementwise_kernelILi128ELi2EZNS0_15gpu_kernel_implINS0_13BinaryFunctorIfffNS0_10AddFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_
+                    7.55%  884.41us        11  80.401us  1.6640us  836.54us  [CUDA memcpy HtoD]
+                    4.14%  484.83us        64  7.5750us  6.7840us  13.504us  void cudnn::winograd_nonfused::winogradForwardFilter4x4<float, float>(cudnn::winograd_nonfused::WinogradFilterParams<float, float>)
+                    0.39%  45.279us         1  45.279us  45.279us  45.279us  void cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>(int, int, int, float const *, int, float*, cudnn::detail::implicit_convolve_sgemm<float, float, int=1024, int=5, int=5, int=3, int=3, int=3, int=1, bool=1, bool=0, bool=1>*, kernel_conv_params, int, float, float, int, float, float, int, int)
+                    0.13%  15.392us         4  3.8480us  3.7120us  4.2560us  [CUDA memset]
+                    0.12%  13.792us         1  13.792us  13.792us  13.792us  _ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_84_GLOBAL__N__60_tmpxft_000071c0_00000000_12_TensorCompare_compute_70_cpp1_ii_d0af11f719launch_clamp_scalarERNS_18TensorIteratorBaseEN3c106ScalarES6_NS0_6detail11ClampLimitsEENKUlvE_clEvENKUlvE6_clEvEUlfE_NS_6detail5ArrayIPcLi2EEEEEviT0_T1_
