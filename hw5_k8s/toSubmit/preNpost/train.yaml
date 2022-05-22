@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: srstrainjob
+spec:
+  template:
+    metadata:
+      name: srstrainjob
+    spec:
+      containers:
+      - name: train
+        image: srsinhanyu/mnisttrain
+        command: ["python3", "mnistscript.py","--epochs", "1"]
+        volumeMounts:
+        - name: srspvcvolume
+          mountPath: /mnt
+      restartPolicy: Never
+      volumes:
+        - name: srspvcvolume
+          persistentVolumeClaim:
+            claimName: srspvcfs

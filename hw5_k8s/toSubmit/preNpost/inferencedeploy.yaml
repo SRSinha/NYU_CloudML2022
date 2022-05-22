@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: srsinferjob
+    labels:
+        app: serviceapi
+        tier: backend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: serviceapi
+    template:
+        metadata:
+            labels:
+                app: serviceapi
+                tier: backend
+        spec:
+            containers:
+                - name: inference
+                  image: srsinhanyu/mnistinfer
+                  ports:
+                      - containerPort: 8000
+                  volumeMounts:
+                  - name: srspvcvolume
+                    mountPath: /mnt
+            volumes:
+              - name: srspvcvolume
+                persistentVolumeClaim:
+                  claimName: srspvcfs
